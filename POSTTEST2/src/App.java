@@ -66,16 +66,31 @@ public class App {
                             System.out.print("Song number: ");
                             int songNumber = scanner.nextInt();
                             scanner.nextLine();
-                            System.out.print("Title: ");
+                            System.out.print("Title (leave empty if not changed): ");
                             String title = scanner.nextLine();
-                            System.out.print("Artist: ");
+                            if (title.isEmpty())
+                                title = songs.get(songNumber-1).getTitle();
+
+                            System.out.print("Artist (leave empty if not changed): ");
                             String artist = scanner.nextLine();
-                            System.out.print("Genre: ");
+                            if (artist.isEmpty())
+                                artist = songs.get(songNumber-1).getArtist();
+
+                            System.out.print("Genre (leave empty if not changed): ");
                             String genre = scanner.nextLine();
-                            System.out.print("Year: ");
+                            if (genre.isEmpty())
+                                genre = songs.get(songNumber-1).getGenre();
+
+                            System.out.print("Year (enter 0 if not changed): ");
                             int year = scanner.nextInt();
-                            songMethods song = new songMethods(title, artist, genre, year);
-                            songs.set(songNumber-1, song);
+                            if (year == 0)
+                                year = songs.get(songNumber-1).getYear();
+                            
+                            songMethods song = songs.get(songNumber - 1);
+                            song.setTitle(title);
+                            song.setArtist(artist);
+                            song.setGenre(genre);
+                            song.setYear(year);
                             System.out.println("Song updated successfully");
                         }
                         case 4 -> {

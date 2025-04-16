@@ -13,18 +13,15 @@ public class Song {
         this.year = year;
     }
 
-    // Overloaded constructor (without year)
     public Song(String title, Artist artist, String genre) {
-        this(title, artist, genre, 2024); // Default to current year
+        this(title, artist, genre, 2024); 
     }
 
-    // Overloaded method for updating song info
     public void updateSong(String newTitle, String newGenre) {
         this.title = newTitle;
         this.genre = newGenre;
     }
 
-    // Overloaded method for updating song info with year
     public void updateSong(String newTitle, String newGenre, int newYear) {
         this.title = newTitle;
         this.genre = newGenre;

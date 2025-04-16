@@ -8,7 +8,7 @@ import song.Song;
 public class App {
     Scanner scanner = new Scanner(System.in);
     ArrayList<Song> songs = new ArrayList<>();
-    ArrayList<Artist> artists = new ArrayList<>(); // Stores artists/bands
+    ArrayList<Artist> artists = new ArrayList<>();
 
     public static void main(String[] args) {
         App app = new App();
@@ -33,14 +33,13 @@ public class App {
                         handleSongs();
                     }
                 }
-                case 2 -> handleArtists(); // Artist management
+                case 2 -> handleArtists();
                 case 3 -> System.exit(0);
                 default -> System.out.println("Invalid menu!");
             }
         }
     }
 
-    // Artist Management
     private void handleArtists() {
         System.out.println("\n=== Artist Management ===");
         System.out.println("1. Add Artist");
@@ -86,7 +85,6 @@ public class App {
         }
     }
 
-    // Song Management (Updated)
     private void handleSongs() {
         while (true) {
             System.out.println("\n=== Song Management ===");
@@ -109,8 +107,7 @@ public class App {
             }
         }
     }
-    
-    // Helper methods for song CRUD operations
+
     private void addSong() {
         if (artists.isEmpty()) {
             System.out.println("No artists available! Create an artist first.");
@@ -137,7 +134,7 @@ public class App {
             scanner.nextLine();
             songs.add(new Song(title, artists.get(artistIndex), genre, year));
         } else {
-            songs.add(new Song(title, artists.get(artistIndex), genre)); // Uses overloaded constructor
+            songs.add(new Song(title, artists.get(artistIndex), genre));
         }
         System.out.println("Song added successfully!");
     }
@@ -173,14 +170,12 @@ public class App {
     
         Song song = songs.get(songIndex);
         
-        // Update Title
         System.out.print("New title (leave blank to keep current): ");
         String newTitle = scanner.nextLine();
         if (!newTitle.isEmpty()) {
             song.setTitle(newTitle);
         }
     
-        // Update Artist
         System.out.println("\nCurrent artist: " + song.getArtist().getName());
         System.out.println("Available Artists:");
         for (int i = 0; i < artists.size(); i++) {
@@ -193,14 +188,12 @@ public class App {
             song.setArtist(artists.get(artistChoice - 1));
         }
     
-        // Update Genre
         System.out.print("New genre (leave blank to keep current): ");
         String newGenre = scanner.nextLine();
         if (!newGenre.isEmpty()) {
             song.setGenre(newGenre);
         }
     
-        // Update Year
         System.out.print("Update year? (y/n): ");
         if (scanner.nextLine().equalsIgnoreCase("y")) {
             System.out.print("New year: ");

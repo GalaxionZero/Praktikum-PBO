@@ -1,6 +1,6 @@
 package model;
 
-public class Hewan {
+public abstract class Hewan {
     public void suara() {
         System.out.println("Suara hewan");
     }
@@ -12,6 +12,8 @@ public class Hewan {
     public void tidur() {
         System.out.println("Hewan sedang tidur");
     }
+
+    
 }
 
 

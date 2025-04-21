@@ -13,7 +13,7 @@ public final class Band extends Artist {
     }
 
     @Override
-    public String getArtistType() {
+    public final String getArtistType() {
         return "Band with " + this.memberCount + " members";
     }
 }

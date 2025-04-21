@@ -13,7 +13,7 @@ public final class SoloArtist extends Artist {
     }
 
     @Override
-    public String getArtistType() {
+    public final String getArtistType() {
         return "Solo Artist (Real Name: " + this.realName + ")";
     }
 }

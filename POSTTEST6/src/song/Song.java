@@ -5,6 +5,7 @@ public class Song {
     private Artist artist;
     private String genre;
     private int year;
+    private static int defaultYear = 2024;
 
     public Song(String title, Artist artist, String genre, int year){
         this.title = title;
@@ -14,7 +15,7 @@ public class Song {
     }
 
     public Song(String title, Artist artist, String genre) {
-        this(title, artist, genre, 2024); 
+        this(title, artist, genre, defaultYear); 
     }
 
     public void updateSong(String newTitle, String newGenre) {
@@ -36,6 +37,8 @@ public class Song {
         System.out.println("Year: " + this.year);
     }
 
+    public static int getDefaultYear() { return defaultYear; }
+
     public String getTitle() { return title; }
 
     public Artist getArtist() { return artist; }
@@ -43,6 +46,8 @@ public class Song {
     public String getGenre() { return genre; }
     
     public int getYear() { return year; }
+
+    public static void setDefaultYear(int newYear) { defaultYear = newYear; }
     
     public void setTitle(String title) { this.title = title; }
 

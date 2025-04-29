@@ -19,7 +19,7 @@ public final class Band implements Artist {
     @Override
     public String getCountry() {
         return country;
-    }~
+    }
 
     public int getMemberCount() {
         return memberCount;
